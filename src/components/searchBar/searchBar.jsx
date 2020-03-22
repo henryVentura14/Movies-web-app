@@ -1,12 +1,21 @@
-import React from "react"
-import "./searchBar.css"
+import React, { useState } from "react"
+import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux'
 import { FiSearch } from 'react-icons/fi';
-
-
-//import { useSelector } from 'react-redux'
+import fetchMovieSeries from "../../actions/searchAction";
+import "./searchBar.css"
 
 const SearchBar = () => {
-  //const games = useSelector((state) => state.gamesReducer);
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('')
+  const [type, setType] = useState('')
+
+  const search = (title, type) => {
+    if (title.length >= 3) {
+      dispatch(fetchMovieSeries(title, type))
+      console.log(title)
+    }
+  }
   return (
     <div className="searchBar">
       <div className="header">
@@ -15,18 +24,31 @@ const SearchBar = () => {
       <div className="content">
         <div className="inputGroup">
           <input type="text"
+            onChange={e => setTitle(e.target.value)}
             className="search"
+            onChange={(e) => search(e.target.value, type)}
           />
-          <FiSearch className="iconSearch"/>
+          <FiSearch className="iconSearch" onClick={() => search(title, type)} />
           <div className="radioContent">
-            <input type="radio" id="test1" name="radio-group" checked />
-            <label htmlFor="test1">Movies</label>
-
-            <input type="radio" id="test2" name="radio-group" />
-            <label htmlFor="test2">Series</label>
+            <input type="radio"
+              id="option1"
+              name="radio-group"
+              defaultValue="movie"
+              onFocus={(e) => search(title, e.target.value)}
+              onChange={e => setType(e.target.value)}
+              checked={true}
+            />
+            <label htmlFor="option1">Movies</label>
+            <input type="radio"
+              id="option2"
+              name="radio-group"
+              defaultValue="series"
+              onFocus={(e) => search(title, e.target.value)}
+              onChange={e => setType(e.target.value)}
+            />
+            <label htmlFor="option2">Series</label>
           </div>
         </div>
-
       </div>
     </div>
   )
