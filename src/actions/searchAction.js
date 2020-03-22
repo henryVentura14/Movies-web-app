@@ -1,16 +1,10 @@
 // Actions config
 import {
-  FETCH_REQUEST,
   FETCH_SUCCESS,
   FETCH_FAILURE
 } from '../config/variables.config'
-import Axios from 'axios'
+import axios from 'axios'
 
-const fetchRequest = () => {
-  return {
-    type: FETCH_REQUEST
-  }
-}
 const fetchSuccess = data => {
   return {
     type: FETCH_SUCCESS,
@@ -25,16 +19,17 @@ const fetchFailure = error => {
 }
 const fetchMovieSeries = (title, type) => {
   const apikey = '45be6f88'
-  const URI = `http://www.omdbapi.com/?s=${title}&apikey=${apikey}&type=${type}`
+  const URI = `http://www.omdbapi.com/?s=${title}&apikey=${apikey}&type=${type}&page=1&r=json`
   return dispatch => {
-    dispatch(fetchRequest())
-    Axios.post(URI)
+    axios
+      .post(URI)
       .then(response => {
-        dispatch(fetchSuccess([response.data]))
+        dispatch(fetchSuccess(response.data.Search))
       })
       .catch(error => {
-        dispatch(fetchFailure('No result'))
+        dispatch(fetchFailure('No result' + error))
       })
   }
 }
+
 export default fetchMovieSeries

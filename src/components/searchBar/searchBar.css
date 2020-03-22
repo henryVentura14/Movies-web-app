@@ -5,6 +5,12 @@
     width           : 100%;
     height          : 100vh;
     color           : var(--fourth);
+    transition      : 1s;
+}
+
+.bar {
+    height    : 12vh;
+    transition: 1s;
 }
 
 .header {
@@ -15,18 +21,16 @@
     align-content  : center;
     align-content  : center;
     margin-left    : 5%;
-    margin-top     : 2%;
+    margin-top     : 0.5%;
 }
 
-.content {
-    width          : 100%;
-    height         : 80%;
-    display        : flex;
-    align-content  : center;
-    align-items    : center;
-    justify-content: center;
-    align-content  : center;
-    flex-direction : column;
+.searchGroup {
+    display : block;
+    width   : 100%;
+    height  : 2rem;
+    position: absolute;
+    right   : 5rem;
+    top     : 1rem;
 }
 
 .inputGroup {
@@ -65,7 +69,7 @@
 }
 
 .radioContent {
-    margin-top     : 1rem;
+    margin-top     : 0rem;
     width          : 100%;
     display        : flex;
     flex-direction : row;

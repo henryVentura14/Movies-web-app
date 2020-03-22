@@ -1,1 +1,58 @@
 @import "../../variables.css";
+
+.dashboard {
+    width : 100%;
+    height: 100%;
+    color : var(--fourth);
+}
+
+.contentCard {
+    width          : 90%;
+    height         : auto;
+    display        : flex;
+    align-content  : center;
+    align-items    : center;
+    justify-content: flex-start;
+    justify-items  : flex-start;
+    flex-wrap      : wrap;
+    margin-top     : 2rem;
+    padding-bottom : 9rem;
+}
+
+.card {
+    width      : 15%;
+    border     : solid 1px var(--first);
+    height     : 10%;
+    margin-top : 2rem;
+    margin-left: 4rem;
+}
+
+.footerCard {
+    width           : 100%;
+    height          : 30%;
+    background-color: var(--first);
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    justify-items   : center;
+    align-content   : center;
+    flex-direction  : column;
+}
+
+.poster {
+    height: 70%;
+    width : 100%;
+}
+
+.title {
+    font-size: 1.2rem;
+}
+
+.year {
+    font-size    : 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.result {
+    color: black;
+}
