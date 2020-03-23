@@ -10,11 +10,10 @@ const initialState = {
 
 const movieSeriesReducer = (state = initialState, action) => {
   switch (action.type) {
-
     case FETCH_SUCCESS: {
       return {
         ...state,
-        moviesSeries: action.payload,
+        moviesSeries: action.payload || [],
         error: ''
       }
     }

@@ -10,11 +10,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className='App'>
-      <SearchBar />
-      
-      <Dashboard />
-      
-      {/* <Modal /> */} 
+        <SearchBar />
+        <Dashboard />
+        {/* <Modal /> */}
       </div>
     </Provider>
   )

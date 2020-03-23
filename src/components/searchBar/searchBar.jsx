@@ -27,9 +27,10 @@ const SearchBar = () => {
       <div className="content">
         <div className={classNames("inputGroup", searchGroup)}>
           <input type="text"
-            onChange={e => setTitle(e.target.value)}
+            onKeyDown={e => setTitle(e.target.value)}
             className="search"
             onChange={e => search(e.target.value, type)}
+            placeholder="Search"
           />
           <FiSearch className="iconSearch" onClick={() => search(title, type)} />
           <div className="radioContent">
@@ -37,15 +38,16 @@ const SearchBar = () => {
               id="option1"
               name="radio-group"
               defaultValue="movie"
-              onFocus={(e) => search(title, 'movie')}
+              onClick={e => search(title, e.target.value)}
               onChange={e => setType(e.target.value)}
+              checked={true}
             />
             <label htmlFor="option1">Movies</label>
             <input type="radio"
               id="option2"
               name="radio-group"
               defaultValue="series"
-              onFocus={(e) => search(title, 'series')}
+              onClick={e => search(title, e.target.value)}
               onChange={e => setType(e.target.value)}
             />
             <label htmlFor="option2">Series</label>

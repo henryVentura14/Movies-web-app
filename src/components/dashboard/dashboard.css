@@ -22,7 +22,7 @@
 .card {
     width      : 15%;
     border     : solid 1px var(--first);
-    height     : 10%;
+    height     : 15%;
     margin-top : 2rem;
     margin-left: 4rem;
 }
@@ -40,12 +40,12 @@
 }
 
 .poster {
-    height: 70%;
+    height: 20rem;
     width : 100%;
 }
 
 .title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .year {

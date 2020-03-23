@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="content">
-        {movieSeries.moviesSeries &&
+        {movieSeries.moviesSeries.length > 0 &&
           <div className="contentCard">
             {movieSeries.moviesSeries.map((card, i) =>
               <div key={`${card.Type}_${card.imdbID}`} className="card">
