@@ -1,0 +1,75 @@
+@import "../../variables.css";
+
+
+.contentCard {
+  width          : 90%;
+  height         : auto;
+  display        : flex;
+  align-content  : center;
+  align-items    : center;
+  justify-content: flex-start;
+  justify-items  : flex-start;
+  flex-wrap      : wrap;
+  margin-top     : 2rem;
+}
+
+.card {
+  cursor     : pointer;
+  width      : 15%;
+  border     : solid 1px var(--first);
+  height     : 12%;
+  margin-top : 1rem;
+  margin-left: 4rem;
+}
+
+.footerCard {
+  width           : 100%;
+  height          : 5rem;
+  background-color: var(--first);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  justify-items   : center;
+  align-content   : center;
+  flex-direction  : column;
+  text-align      : center;
+}
+
+.poster {
+  height: 20rem;
+  width : 100%;
+}
+
+.modalCard {
+  display        : flex;
+  flex-direction : row;
+  width          : 100%;
+  height         : 100%;
+  justify-content: space-between;
+  justify-items  : space-between;
+}
+
+.posterModal {
+  width : 35%;
+  height: 93%;
+}
+
+.detailsCards {
+  color          : var(--dark);
+  flex-direction : column;
+  width          : 70%;
+  height         : 93%;
+  justify-items  : center;
+  justify-content: center;
+  align-items    : flex-start;
+  align-content  : flex-start;
+}
+
+.title {
+  font-size: 1.1rem;
+}
+
+.year {
+  font-size    : 0.8rem;
+  margin-bottom: 0.4rem;
+}

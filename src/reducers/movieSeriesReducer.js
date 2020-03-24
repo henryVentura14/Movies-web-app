@@ -1,11 +1,16 @@
 import {
   FETCH_SUCCESS,
-  FETCH_FAILURE
-} from '../config/variables.config'
+  FETCH_ONE,
+  FETCH_FAILURE,
+  MODAL
+} from '../config/variablesConfig'
 
 const initialState = {
   moviesSeries: [],
+  moviesSeriesOne: [],
   error: '',
+  modal: false,
+  loading: false
 }
 
 const movieSeriesReducer = (state = initialState, action) => {
@@ -17,11 +22,25 @@ const movieSeriesReducer = (state = initialState, action) => {
         error: ''
       }
     }
+    case FETCH_ONE: {
+      return {
+        ...state,
+        moviesSeriesOne: action.payload,
+        error: ''
+      }
+    }
     case FETCH_FAILURE: {
       return {
         ...state,
         moviesSeries: [],
+        moviesSeriesOne: [],
         error: action.payload
+      }
+    }
+    case MODAL: {
+      return {
+        ...state,
+        modal: action.payload
       }
     }
     default:

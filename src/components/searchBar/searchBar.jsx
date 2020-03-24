@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux";
 import { FiSearch } from 'react-icons/fi';
+import { fetchMovieSeries } from "../../actions/searchAction";
 import classNames from 'classnames';
-import fetchMovieSeries from "../../actions/searchAction";
-import "./searchBar.css"
+import "./searchBar.css";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -12,49 +12,61 @@ const SearchBar = () => {
   const [bar, setBar] = useState('')
   const [searchGroup, setSearchGroup] = useState('')
 
-  const search = (title, type) => {
+  const searchLength = (title, type) => {
     if (title.length >= 3) {
       dispatch(fetchMovieSeries(title, type))
       setBar('bar')
       setSearchGroup('searchGroup')
     }
   }
+  const searchEnter = (e) => {
+    if (e.key === "Enter") {
+      dispatch(fetchMovieSeries(title, type))
+    }
+  }
+  const search = (title, type) => {
+    dispatch(fetchMovieSeries(title, type))
+  }
   return (
-    <div className={classNames("searchBar", bar)}>
-      <div className="header">
-        <h2>Movies & Series</h2>
-      </div>
-      <div className="content">
-        <div className={classNames("inputGroup", searchGroup)}>
-          <input type="text"
-            onKeyDown={e => setTitle(e.target.value)}
-            className="search"
-            onChange={e => search(e.target.value, type)}
-            placeholder="Search"
-          />
-          <FiSearch className="iconSearch" onClick={() => search(title, type)} />
-          <div className="radioContent">
-            <input type="radio"
-              id="option1"
-              name="radio-group"
-              defaultValue="movie"
-              onClick={e => search(title, e.target.value)}
-              onChange={e => setType(e.target.value)}
-              checked={true}
+    <React.Fragment>
+
+      <div className={classNames("searchBar", bar)}>
+        <div className="header">
+          <h2>Movies & Series</h2>
+        </div>
+        <div className="content">
+          <div className={classNames("inputGroup", searchGroup)}>
+            <input type="text"
+              onKeyPress={e => searchEnter(e)}
+              onKeyDown={e => setTitle(e.target.value)}
+              className="search"
+              onChange={e => searchLength(e.target.value, type)}
+              placeholder="Search"
             />
-            <label htmlFor="option1">Movies</label>
-            <input type="radio"
-              id="option2"
-              name="radio-group"
-              defaultValue="series"
-              onClick={e => search(title, e.target.value)}
-              onChange={e => setType(e.target.value)}
-            />
-            <label htmlFor="option2">Series</label>
+            <FiSearch className="iconSearch" onClick={() => search(title, type)} />
+            <div className="radioContent">
+              <input type="radio"
+                id="option1"
+                name="radio-group"
+                defaultValue="movie"
+                onChange={e => setType(e.target.value)}
+                defaultChecked={true}
+                onFocus={() => search(title, type)}
+              />
+              <label htmlFor="option1">Movies</label>
+              <input type="radio"
+                id="option2"
+                name="radio-group"
+                defaultValue="series"
+                onChange={e => setType(e.target.value)}
+                onFocus={() => search(title, type)}
+              />
+              <label htmlFor="option2">Series</label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 export default SearchBar;

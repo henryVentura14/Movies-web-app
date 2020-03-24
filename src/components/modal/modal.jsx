@@ -1,12 +1,37 @@
 import React from "react"
-//import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { modalAction } from "../../actions/searchAction";
+import { AiOutlineClose } from 'react-icons/ai';
 
-const Modal = () => {
-    //const games = useSelector((state) => state.gamesReducer);
-    return (
+// import classNames from 'classnames';
+import "./modal.css";
+
+const Modal = ({ children }) => {
+  const dispatch = useDispatch();
+  const close = useSelector((state) => state.movieSeriesReducer);
+
+  return (
+    <React.Fragment>
+
       <div>
-          soy un modal
-      </div>
-    )
+        {close.modal && (
+          <div>
+            <div className="modal">
+            </div>
+            <div className="contentModal">
+              <div className="barModal">
+                <AiOutlineClose className="iconClose" onClick={(e) => {
+                  dispatch(modalAction(false))
+                  e.stopPropagation()
+                }
+                } />
+              </div>
+              {children}
+            </div>
+          </div>
+        )}
+      </div >
+    </React.Fragment>
+  )
 }
 export default Modal;

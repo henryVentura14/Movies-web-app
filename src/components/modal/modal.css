@@ -1,1 +1,43 @@
-@import "../../variables"; 
+@import "../../variables.css";
+
+.modal {
+    width           : 101%;
+    height          : 101%;
+    position        : fixed;
+    left            : 0px;
+    top             : 0px;
+    z-index         : 2 !important;
+    background-color: var(--dark);
+    opacity         : 0.2;
+    text-decoration : none;
+}
+
+.modal:hover {
+    cursor: default;
+}
+
+.contentModal {
+    position        : absolute;
+    top             : 25%;
+    left            : 30%;
+    width           : 40%;
+    height          : 50%;
+    background-color: var(--fourth);
+    z-index         : 9 !important;
+}
+
+.barModal {
+    width           : 100%;
+    display         : flex;
+    justify-content : flex-end;
+    justify-items   : flex-end;
+    background-color: var(--first);
+}
+
+.iconClose {
+    display         : block;
+    color           : var(--fourth);
+    cursor          : pointer;
+    font-size       : 2rem;
+    background-color: var(--danger)
+}
