@@ -40,31 +40,6 @@
   width : 100%;
 }
 
-.modalCard {
-  display        : flex;
-  flex-direction : row;
-  width          : 100%;
-  height         : 100%;
-  justify-content: space-between;
-  justify-items  : space-between;
-}
-
-.posterModal {
-  width : 35%;
-  height: 93%;
-}
-
-.detailsCards {
-  color          : var(--dark);
-  flex-direction : column;
-  width          : 70%;
-  height         : 93%;
-  justify-items  : center;
-  justify-content: center;
-  align-items    : flex-start;
-  align-content  : flex-start;
-}
-
 .title {
   font-size: 1.1rem;
 }
@@ -72,4 +47,63 @@
 .year {
   font-size    : 0.8rem;
   margin-bottom: 0.4rem;
+}
+
+.cardModal {
+  display       : flex;
+  flex-direction: row;
+  width         : 100%;
+  height        : 100%;
+
+}
+
+.posterModal {
+  width : 35%;
+  height: 93%;
+}
+
+.detailsModal {
+  color          : var(--dark);
+  flex-direction : column;
+  width          : 70%;
+  height         : 93%;
+  display        : flex;
+  justify-items  : flex-start;
+  justify-content: flex-start;
+  align-items    : center;
+  align-content  : center;
+}
+
+.titleModal {
+  text-align: center;
+  font-size : 1.5rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.yearModal {
+  font-size    : 1rem;
+  margin-bottom: 0.4rem;
+  width        : 90%;
+  text-align   : center;
+}
+
+.ratingModal {
+  width     : 90%;
+  text-align: center;
+}
+
+.actorsModal {
+  width: 90%;
+}
+
+.genreModal {
+  border-radius: 20%;
+  width        : auto;
+  height       : 2rem;
+}
+
+.plotModal {
+  font-style: italic;
+  width     : 90%;
 }

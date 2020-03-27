@@ -32,10 +32,17 @@ const ModalCards = () => {
   const movieSeriesOne = useSelector((state) => state.movieSeriesReducer);
   return (
     <Modal>
-      <div className="modalCard">
+      <div className="cardModal">
         <img className="posterModal" src={movieSeriesOne.moviesSeriesOne.Poster} alt="poster" />
-        <div className="detailsCards">
-          <span className="title">{movieSeriesOne.moviesSeriesOne.Title}</span>
+        <div className="detailsModal">
+          <span className="titleModal">{movieSeriesOne.moviesSeriesOne.Title}</span>
+          <span className="yearModal">{movieSeriesOne.moviesSeriesOne.Year}</span>
+          <span className="ratingModal">{movieSeriesOne.moviesSeriesOne.imdbRating}</span>
+
+          <span className="genreModal">{movieSeriesOne.moviesSeriesOne.Genre}</span>
+          <span className="genreActor">{movieSeriesOne.moviesSeriesOne.Actors}</span>
+          <p className="plotModal">{movieSeriesOne.moviesSeriesOne.Plot}</p>
+
         </div>
       </div>
     </Modal>
