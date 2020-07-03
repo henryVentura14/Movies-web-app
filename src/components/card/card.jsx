@@ -4,7 +4,6 @@ import { fetchMovieSeriesOne, modalAction } from "../../actions/searchAction";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from '../modal/modal';
 
-
 const Card = ({ card }) => {
   const dispatch = useDispatch();
   return (
