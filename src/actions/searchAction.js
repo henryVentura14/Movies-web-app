@@ -34,7 +34,7 @@ const fetchFailure = error => {
   }
 }
 const fetchMovieSeriesOne = id => {
-  const URI_ONE = `http://www.omdbapi.com/?i=${id}&apikey=${apikey}&&r=json`
+  const URI_ONE = `https://www.omdbapi.com/?i=${id}&apikey=${apikey}&&r=json`
   return dispatch => {
     axios
       .post(URI_ONE)
@@ -49,7 +49,7 @@ const fetchMovieSeriesOne = id => {
 const fetchMovieSeries = (title, type) => {
   let page = 1
   //TODO HENRY DEBES PASAR EL PARAMETRO DE NUMERO DE PAGINA CUANDO CREES LA PAGINACION
-  const URI_SEARCH = `http://www.omdbapi.com/?s=${title}&apikey=${apikey}&type=${type}&page=${page}&r=json`
+  const URI_SEARCH = `https://www.omdbapi.com/?s=${title}&apikey=${apikey}&type=${type}&page=${page}&r=json`
   return dispatch => {
     axios
       .post(URI_SEARCH)
