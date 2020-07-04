@@ -21,4 +21,4 @@ npm run build
 
 ## Live demo
 
-[here you can try the app](https://wizardly-fermi-10860f.netlify.app/)
+[here you can try the app](https://xenodochial-newton-e42ffc.netlify.app/)
