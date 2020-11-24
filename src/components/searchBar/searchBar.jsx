@@ -27,12 +27,18 @@ const SearchBar = () => {
   const search = (title, type) => {
     dispatch(fetchMovieSeries(title, type))
   }
+  const handleClick = () => {
+    setBar('')
+    setTitle('')
+    setType('')
+    setSearchGroup('')
+  }
   return (
     <React.Fragment>
 
       <div className={classNames("searchBar", bar)}>
         <div className="header">
-          <h2>Movies & Series</h2>
+          <h2 onClick={handleClick}>Movies & Series</h2>
         </div>
         <div className="content">
           <div className={classNames("inputGroup", searchGroup)}>

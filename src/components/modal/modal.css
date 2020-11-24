@@ -14,7 +14,7 @@
 .modal:hover {
     text-decoration: none;
     pointer-events : none;
-    cursor: default;
+    cursor         : default;
 }
 
 .contentModal {
@@ -37,8 +37,17 @@
 
 .iconClose {
     display         : block;
-    color           : var(--fourth);
     cursor          : pointer;
     font-size       : 2rem;
-    background-color: var(--danger)
+    background-color: var(--fourth);
+    color           : var(--danger);
+    border: 2px solid var(--danger);
+
+}
+
+.iconClose:hover {
+    background-color: var(--danger);
+    color           : var(--fourth);
+    border: 2px solid var(--fourth);
+    border-style: dashed;
 }
